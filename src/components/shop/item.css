@@ -1,0 +1,11 @@
+@keyframes show {
+    from {opacity:0}
+    to {opacity:1}
+}
+.item{
+    animation-name: show;
+    animation-duration: 1s;
+}
+li:hover{
+    border-bottom: 1px solid black;
+}
