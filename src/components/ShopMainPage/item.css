@@ -6,6 +6,6 @@
     animation-name: show;
     animation-duration: 1s;
 }
-li:hover{
+.nav-list li:hover{
     border-bottom: 1px solid black;
 }

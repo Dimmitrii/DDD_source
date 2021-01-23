@@ -10,7 +10,7 @@ export default function Page() {
             <Header/>
             <List/>
             <Special/>
-            <Footer/>           
+            {/* <Footer/>            */}
         </div>
     )
 }

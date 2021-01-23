@@ -4,8 +4,8 @@ import RightArrow from "./img/Vector 2.png";
 
 export default function Arrow({direction,onClick}) { 
     return (
-        <div onClick={onClick}>
-            <img src={`${direction === "left" ? leftArrow : RightArrow}`} alt={"arrow"} style={{paddingTop:"147px"}}/>
+        <div onClick={onClick} style={{height:"42px",marginTop:"147px"}}>
+            <img src={`${direction === "left" ? leftArrow : RightArrow}`} alt={"arrow"}/>
         </div>
     )
 }
