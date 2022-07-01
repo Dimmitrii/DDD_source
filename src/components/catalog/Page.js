@@ -2,7 +2,6 @@ import React from 'react';
 
 import List from "./List";
 import SideBarFilter from "./SideBarFilter";
-import Footer from "../ShopMainPage/Footer";
 
 import {items} from "./db";
 
@@ -15,6 +14,7 @@ export default class Page extends React.Component {
         clothes: items,
         clothType:[],
         accessoriesType:[],
+        shoesType:[],
         color:[],
         pattern:[],
         valueFrom:"",
@@ -23,8 +23,39 @@ export default class Page extends React.Component {
         isHighToLow:false,
         currentPage:1,
         itemsPerPage:15,
+        isAsideActive:false,
     }
     componentDidMount(){
+        // console.log(this.props.match,"prooooooooooooooooooooooooops")
+        const id = this.props.match.params.id;
+        console.log(id);
+        // if(id === "hats"){
+        //     this.setState({accessoriesType:["Головные убор"]});
+        // }
+        // else if(id === "coats"){
+        //     this.setState({clothType:["Пальто"]})
+        // }
+        // else if(id === "costumes"){
+        //     this.setState({clothType:["Костюм"]})
+        // }
+        // else if(id === "trousers"){
+        //     this.setState({clothType:["Брюки"]})
+        // }
+        // else if(id === "shoes"){
+        //     this.setState({shoesType:["Туфли"]})
+        // }
+        // else if(id === "accessories"){
+        //     this.setState({accessoriesType:["Головные убор","Шарф","Галстук"]})
+        // }
+        // else if(id === "blazers"){
+        //     this.setState({clothType:["Пиджак"]})
+        // }
+        // else if(id === "tShirts"){
+        //     this.setState({clothType:["Рубашка"]})
+        // }
+        // else if(id === "ties"){
+        //     this.setState({accessoriesType:["Галстук"]})
+        // }
         const mediaQuery = window.matchMedia('(max-width: 1242px)');
         const mediaQuery2 = window.matchMedia('(max-width: 768px)');
         if(mediaQuery.matches){
@@ -40,6 +71,9 @@ export default class Page extends React.Component {
             else if(!e.matches){
                 this.setState({itemsPerPage:15})
             }
+        })
+        mediaQuery2.addEventListener("change",()=>{
+            this.setState({isAsideActive:false})
         })
     }
     onChangeCheckBox = (e,type)=>{
@@ -58,6 +92,7 @@ export default class Page extends React.Component {
         }
     }
     onChangeCost = (e)=>{
+        if(isNaN(e.target.value)) return;
         const {value,title} = e.target;
         this.setState({[title]:value,currentPage:1});
     }
@@ -78,22 +113,32 @@ export default class Page extends React.Component {
             this.setState({currentPage: this.state.currentPage+1})
         }
     }
+    handleAside = ()=>{
+        this.setState({isAsideActive:!this.state.isAsideActive})
+    }
+    handleAsideOff = ()=>{
+        this.setState({isAsideActive:false})
+    }
+    onIdChange = (filters,type)=>{
+        this.setState({accessoriesType:[],clothType:[],shoesType:[]},()=>{this.setState({[type]:filters})});
+    }
     render() {
-        const {clothes,clothType,accessoriesType,color,pattern,valueFrom,valueTo,isHighToLow,isLowToHigh,currentPage,itemsPerPage} = this.state;
+        const {clothes,clothType,accessoriesType,color,pattern,valueFrom,valueTo,isHighToLow,isLowToHigh,currentPage,itemsPerPage,shoesType,isAsideActive} = this.state;
         // console.log(clothes,"fgasfasfsafasfasfasfasfsa")
-        const currentCloth = filterCloth(clothes,clothType,accessoriesType,color,pattern,valueFrom,valueTo,isLowToHigh,isHighToLow);
-        // console.log(currentCloth);
+        const currentCloth = filterCloth(clothes,clothType,accessoriesType,color,pattern,valueFrom,valueTo,isLowToHigh,isHighToLow,shoesType);
+        console.log(currentCloth,"фафыафыафыафыааы");
         // console.log(this.state)
         // console.log((currentPage-1)*itemsPerPage);
         // console.log(currentPage*itemsPerPage);
         // console.log(this.handleChangePage,"fasfasfsafasfasfasfaaaaaaaaaaaaaaas")
         return (
-            <div style={{margin:"0 auto"}}>
+            <div className="catalog-wrapper" style={{margin:"0 auto",width:"fit-content"}}>
                 <div className="list-container">
-                    <SideBarFilter onChange={this.onChangeCheckBox} onChangeCost={this.onChangeCost} valueFrom={this.state.valueFrom} valueTo={this.state.valueTo}/>
+                    <SideBarFilter onChange={this.onChangeCheckBox} onChangeCost={this.onChangeCost} valueFrom={this.state.valueFrom} valueTo={this.state.valueTo}
+                    match={this.props.match} isAsideActive={isAsideActive} handleAsideOff={this.handleAsideOff} onIdChange={this.onIdChange}/>
                     <List clothes={currentCloth.slice((currentPage-1)*itemsPerPage,currentPage*itemsPerPage)} onChangeLow={this.lowToHigh} onChangeHigh={this.highToLow} 
                     isHighToLow={isHighToLow} isLowToHigh={isLowToHigh} itemsPerPage={itemsPerPage} currentPage={currentPage} onChangePage={this.handleChangePage}
-                    clothLength={currentCloth.length} onClickArrow={this.handlePaginationArrow}/> 
+                    clothLength={currentCloth.length} onClickArrow={this.handlePaginationArrow} match={this.props.match} handleAside={this.handleAside}/> 
                     {/* <Footer/>    */}
                 </div>
                 {/* <Footer/>  */}

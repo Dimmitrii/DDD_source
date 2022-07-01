@@ -2,7 +2,7 @@ import React from 'react'
 import Header from "./Header";
 import List from "./List";
 import Special from "./Special";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 
 export default function Page() {
     return (
@@ -10,7 +10,7 @@ export default function Page() {
             <Header/>
             <List/>
             <Special/>
-            {/* <Footer/>            */}
+            {/* <Footer/>*/}
         </div>
     )
 }

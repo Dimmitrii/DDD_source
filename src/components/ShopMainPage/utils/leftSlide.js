@@ -18,7 +18,8 @@ export default function leftSlide(position,list,setPosition,fullItems,listWrappe
         })
         return;
     }
-    // console.log(Math.min(position+1200,-1200))
+    console.log(position);
+    console.log(Math.min(position+widthOfSlide,-1200))
     
     setPosition(Math.min(position+widthOfSlide,-1200))
 }

@@ -1,0 +1,274 @@
+.item-page{
+    display: flex;
+    margin: 0 auto;
+    width: 1170px;
+}
+.item-page ul li{
+    margin-bottom: 14px;
+}
+.item-page button{
+    outline: none;
+}
+.item-page button:hover{
+    color: #29827C;
+    border: 1px solid #29827C !important;
+    /* border-color: #29827C !important; */
+}
+.item-page-size-menu{
+    width: 264px;
+    background-color: white;
+    position: relative;
+    transition: 1000ms;
+    overflow: hidden;
+    border: 1px solid black;
+    border-top: 0px solid black;
+    font-size: 20px;
+    transition-property: height, border-bottom-width;
+}
+.item-page-size-menu div{
+    cursor: pointer;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #CCC9C9;
+    padding-left: 21px;
+}
+.item-page-size-menu div:hover{
+    /* border-bottom: 1px solid #29827C; */
+    border-color: #29827C;
+    color: #29827C;
+}
+.item-page-size-menu div:nth-child(5){
+    border-bottom: 0px solid black;
+}
+.item-page-size-menu div:nth-child(5):hover{
+    border-bottom: 0px solid black;
+}
+.item-page-gallery{
+    width: 771px;
+    height: 578px;
+    background-color: #F0F0F0;
+    text-align: center;
+    margin-right: 30px;
+}
+.item-page-visible-gallery{
+    width: 400px;
+    overflow: hidden;
+    margin: 0 30px;
+}
+.item-page-full-gallery{
+    display: flex;
+    transition: 1000ms;
+    width: 1260px;
+}
+.item-page-options{
+
+}
+.item-page-about li{
+    font-weight: 500;
+}
+.item-page-main{
+    display: flex;
+    width: 502px;
+    height: 508px;
+    margin: 10px auto 0 auto;
+    align-items: center;
+}
+.item-page-navigation{
+    color: #745F4C;
+    width: 1160px;
+    margin: 50px auto 10px auto;
+    font-weight: 300;
+    font-size: 12px;
+}
+.item-page-title-hidden{
+    display: none;
+}
+@media only screen and (max-width: 1242px) {
+    .item-page{
+        width: 738px;
+    }
+    .item-page-gallery{
+        height: 457px;
+        margin: 0;
+    }
+    .item-page-visible-gallery{
+        width: 316px;
+        height: 402px;
+        margin: 0 15px;
+    }
+    .item-page-full-gallery div{
+        width: 316px !important;
+        height: 402px !important;
+    }
+    .item-page-full-gallery div img{
+        width: 316px !important;
+        height: 402px !important;
+    }
+    .item-page-main{
+        width: 380px;
+        height: 402px;
+    }
+    .item-page-main > div:nth-child(1){
+        width: 17px !important;
+        height: 33px !important;
+    }
+    .item-page-main > div:nth-child(3){
+        width: 17px !important;
+        height: 33px !important;
+    }
+    .item-page-main > div:nth-child(1) img{
+        width: 17px !important;
+        height: 33px !important;
+    }
+    .item-page-main > div:nth-child(3) img{
+        width: 17px !important;
+        height: 33px !important;
+    }
+    .item-page-full-gallery{
+        width: 1008px;
+    }
+    .item-page-full-gallery>div{
+        line-height: 402px !important;
+    }
+    .item-page button{
+        width: 226px !important;
+    }
+    .item-page h2{
+        font-size: 22px !important;
+    }
+    .item-page h2+p{
+        font-size: 20x !important;
+    }
+    .item-page-options{
+        height: 457px;
+        background-color: #F0F0F0;
+        padding-right: 30px;
+    }
+    .item-page-size-menu{
+        width: 226px;
+    }
+    .item-page-navigation{
+        width: 738px;
+    }
+    .item-page-description{
+        width: 256px;
+    }
+    .item-page-about{
+        width: 312px;
+        position: relative;
+        right: 457px;
+        margin-top: 25px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .item-page{
+        flex-direction: column;
+        width: 320px;
+        padding: 0 15px;
+    }
+    .item-page-gallery{
+        width: 290px;
+        height: 269px;
+    }
+    .item-page-visible-gallery{
+        width: 186px;
+        height: 236px;
+        margin: 0 7px;
+    }
+    .item-page-full-gallery div{
+        width: 186px !important;
+        height: 236px !important;
+    }
+    .item-page-full-gallery div img{
+        width: 186px !important;
+        height: 236px !important;
+    }
+    .item-page-main{
+        width: 224px;
+        height: 236px;
+    }
+    .item-page-main > div:nth-child(1){
+        width: 12x !important;
+        height: 24px !important;
+    }
+    .item-page-main > div:nth-child(3){
+        width: 12px !important;
+        height: 24px !important;
+    }
+    .item-page-main > div:nth-child(1) img{
+        width: 12px !important;
+        height: 24px !important;
+    }
+    .item-page-main > div:nth-child(3) img{
+        width: 12px !important;
+        height: 24px !important;
+    }
+    .item-page-full-gallery{
+        width: 618px;
+    }
+    .item-page-full-gallery>div{
+        line-height: 236px !important;
+    }
+    .item-page-gallery div:nth-child(2){
+        font-size: 14px !important;
+        margin-top: 2px !important;
+    }
+    .item-page-title{
+        display: none;
+    }
+    .item-page-navigation{
+        display: none; 
+    }
+    .item-page-title-hidden{
+        width: 320px!important;
+        display: block;
+        margin: 10px auto 0 auto;
+        padding: 0 15px;
+    }
+    .item-page-title-hidden h2{
+        font-size: 18px !important; 
+    }
+    .item-page-title-hidden p{
+        font-size: 16px !important;
+    }
+    .item-page-options{
+        background-color: white;
+    }
+    .item-page-about{
+        width: 290px;
+        position: initial;
+    }
+    .item-page-options{
+        height: 95px;
+        margin-top: 20px;
+    }
+    .item-page-options button{
+        height: 40px !important;
+    }
+    .item-page-options div:nth-child(3) button{
+        width: 188px !important;
+    }
+    .item-page-size-menu{
+        width: 188px;
+    }
+    .item-page-size-menu div:nth-child(2){
+        width: 125px !important;
+    }
+    .item-page-size-menu div:nth-child(3){
+        width: 140px !important;
+    }
+    .item-page-size-menu div:nth-child(4){
+        width: 155px !important;
+    }
+    .item-page-size-menu div:nth-child(5){
+        width: 170px !important;
+    }
+    .item-page ul li{
+        font-size: 16px;
+    }
+    .item-page ul li span{
+        font-size: 14px !important;
+        margin-left: 10px !important;
+    }
+}

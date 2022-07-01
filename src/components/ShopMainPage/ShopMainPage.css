@@ -12,6 +12,7 @@ a:hover{
 }
 .nav{
     display: flex;
+    flex-wrap: nowrap;
     width: 1170px;
     margin: 0 auto; 
     font-size: 14px;
@@ -32,6 +33,11 @@ a:hover{
 .menu-basket{
     margin: 55px 7px 0 0;
     height: 26px;
+}
+.language-globe{
+    margin-top: 50px;
+    width: 32px;
+    height: 32px;
 }
 .basket-text{
     line-height: 140px;
@@ -101,6 +107,20 @@ footer h4{
 .side-menu{
     display: none;
 }
+.side-menu a{
+    color: #745F4C;
+    font-weight: 500;
+
+}
+.side-menu li{
+    padding-left: 15px;
+}
+.side-menu li p{
+    height: 25px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    width: 160px;
+    margin: 0;
+}
 @media only screen and (max-width: 1242px) {
     .nav-wrapper{
         min-width: 768px;
@@ -118,7 +138,10 @@ footer h4{
         margin-top: 32px !important;
     }
     .menu-basket{
-        margin: 33px 12px 0px 0px !important;
+        margin: 30px 12px 0px 0px !important;
+    }
+    .language-globe{
+        margin-top: 25px;
     }
     .menu-burger{
         margin-left: 15px;
@@ -219,6 +242,7 @@ footer h4{
     .menu-basket{
         margin-right: 15px !important;
         margin-top: 30px !important;
+        margin-left: 20px !important;
     }
     .menu-burger{
         margin: 32px 27px 0 15;
@@ -273,8 +297,14 @@ footer h4{
     .list-wrapper{
         width: 320px;
     }
+    .list-wrapper > div:nth-child(1){
+        display: none;
+    }
+    .list-wrapper > div:nth-child(3){
+        display: none;
+    }
     .visible-list{
-        margin: 0 2px;
+        margin: 0 25px;
     }
     .item{
         height: 363px !important;
